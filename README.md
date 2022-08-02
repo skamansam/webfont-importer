@@ -36,6 +36,26 @@ To close the dev server, hit Ctrl-C
 Stuck? Visit us at https://svelte.dev/chat
 ```
 
+```
+npm init vitebook
+✔ Project Name: · demo
+✔ Project Description: · demo
+✔ Select a framework: · svelte
+✔ Select a theme: · default
+✔ Features: · No items were selected
+
+🏗️  /home/sam/workspace/webfont-importer
+
+
+vitebook@0.100.5
+
+✅ Done. Now run:
+
+  npm install
+  npm run vitebook:dev
+
+```
+
 
 # create-svelte
 
