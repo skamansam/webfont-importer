@@ -6,11 +6,3 @@ node_modules
 .env
 .env.*
 !.env.example
-.vercel
-.output
-
-.DS_STORE
-.cache
-.temp
-node_modules/
-dist/
