@@ -45,7 +45,7 @@
   // Roboto:ital,wght@0,100;0,700;1,700
   // Montserrat:wght@100;300
   const buildGoogleFontParam = (font:Font): string => {
-    let fontParam = font.family;
+    let fontParam = `family=${font.family}`;
     if ((font.variants || []).length < 1) return fontParam;
     fontParam += ':';
     const hasItalics = font.variants.find((v:FontVariant) => isItalic(v));

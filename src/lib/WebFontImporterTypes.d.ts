@@ -12,5 +12,5 @@ export type FontVariant = variantType | {
 
 export type Font = {
   family: string,
-  variants: FontVariant[],
+  variants?: FontVariant[],
 }
