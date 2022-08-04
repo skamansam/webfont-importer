@@ -5,14 +5,22 @@
 	let fontVariant:FontVariant = '400';
 	let fontItalics = false;
   let showStyled = true;
+  let fontSource = 'bunny';
 </script>
 
 <svelte:head>
-	<WebFontImporter fonts="{[{family: fontFamily, variants:[{variant: fontVariant, italics: fontItalics}]}]}"/>
+	<WebFontImporter source={fontSource} fonts="{[{family: fontFamily, variants:[{variant: fontVariant, italics: fontItalics}]}]}"/>
 </svelte:head>
 
 <h2 class="ml-3 font-bold">Options:</h2>
 <div class="border p-3 shadow-lg mb-3">
+  <div class="w-100 mt-2 mb-2">
+    <label for="fontSource" class="font-bold w-1/3 inline-block">Source: </label>
+    <select id="fontSource" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontSource}">
+      <option value="bunny">Bunny</option>
+      <option value="google">Google</option>
+    </select>
+  </div>
   <div class="w-100">
     <label for="fontFamily" class="font-bold w-1/3 inline-block">Font Family: </label>
     <input id="fontFamily" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontFamily}"/>
@@ -28,10 +36,24 @@
 </div>
 
 <h2 class="ml-3 font-bold">Code:</h2>
-<div class="border p-3 shadow-lg mb-3">
-  <code>
-  &lt;WebFontImporter fonts="{'{'}[{'{'}family: "{fontFamily}", variants:[{'{'}variant: "{fontVariant}", italics: {fontItalics}{'}'}]{'}'}]{'}'}"/&gt;
-  </code>
+<div class="border shadow-lg mb-3">
+  <pre><code>
+    &lt;WebFontImporter
+      source="{fontSource}" 
+      fonts="{'{'}
+      [
+        {'{'}
+          family: "{fontFamily}", 
+          variants: [
+            {'{'}
+              variant: "{fontVariant}", 
+              italics: {fontItalics}
+            {'}'}
+          ]
+        {'}'}
+      ]
+    {'}'}"/&gt;
+  </code></pre>
 </div>
 
 <h2 class="ml-3 font-bold">    

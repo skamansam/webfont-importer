@@ -76,7 +76,7 @@
       }).join(',');
       return `${font.family}:${weights}`
     }).join('|')
-    return `https://fonts.bunny.net/css?${fontParams}`;
+    return `https://fonts.bunny.net/css?family=${fontParams}`;
   }
 
 	const fontURI = source === 'bunny' ? buildBunnyFontURI() : buildGoogleFontURI();
