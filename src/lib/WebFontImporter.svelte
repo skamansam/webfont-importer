@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Font, FontVariant } from './WebFontImporterTypes';
+	import type { Font, FontVariant, WebfontImporterSource } from './WebFontImporterTypes';
   // https://fonts.bunny.net/css?family=amiri:400|goldman:400
   // <link rel="preconnect" href="https://fonts.googleapis.com">
   // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
   const isItalic = (variant: FontVariant): boolean => {
     return typeof variant === 'string' ? variant.endsWith('i') : variant?.italics;
   }
-	export let source: "google"| "bunny" = 'google';
+	export let source: WebfontImporterSource = 'google';
 
 	export let fonts:Font[] = [];
   
@@ -48,10 +48,10 @@
     let fontParam = `family=${font.family}`;
     if ((font.variants || []).length < 1) return fontParam;
     fontParam += ':';
-    const hasItalics = font.variants.find((v:FontVariant) => isItalic(v));
+    const hasItalics = font.variants?.find((v:FontVariant) => isItalic(v));
     if (hasItalics) fontParam += 'ital,';
     fontParam += 'wght@';
-    fontParam += font.variants.map((variant:FontVariant) => {
+    fontParam += font.variants?.map((variant:FontVariant) => {
       let italicsMarker = '';
       if (hasItalics) {
         italicsMarker = '0,'
@@ -70,7 +70,7 @@
 
   const buildBunnyFontURI = ():string => {
     const fontParams = fonts.map((font) => {
-      const weights = font.variants.map((variant) => {
+      const weights = font.variants?.map((variant) => {
         if (typeof variant === 'string') return variant;
         return weightToNum[variant.variant] + (isItalic(variant) ? 'i' : '');
       }).join(',');
@@ -83,6 +83,8 @@
 
 
 </script>
+
+<svelte:options tag="webfont-importer"></svelte:options>
 
 {#if source == 'google'}
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

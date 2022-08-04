@@ -14,3 +14,4 @@ export type Font = {
   family: string,
   variants?: FontVariant[],
 }
+export type WebfontImporterSource = 'bunny' | 'google';
