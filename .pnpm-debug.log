@@ -1,0 +1,15 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_INIT_ARG",
+    "hint": "Maybe you wanted to run \"pnpm create svelte@next\"",
+    "err": {
+      "name": "pnpm",
+      "message": "init command does not accept any arguments",
+      "code": "ERR_PNPM_INIT_ARG",
+      "stack": "pnpm: init command does not accept any arguments\n    at Object.handler [as init] (/home/sam/.config/nvm/versions/node/v16.10.0/lib/node_modules/pnpm/dist/pnpm.cjs:180279:15)\n    at /home/sam/.config/nvm/versions/node/v16.10.0/lib/node_modules/pnpm/dist/pnpm.cjs:182793:51\n    at async run (/home/sam/.config/nvm/versions/node/v16.10.0/lib/node_modules/pnpm/dist/pnpm.cjs:182769:34)\n    at async runPnpm (/home/sam/.config/nvm/versions/node/v16.10.0/lib/node_modules/pnpm/dist/pnpm.cjs:182987:5)\n    at async /home/sam/.config/nvm/versions/node/v16.10.0/lib/node_modules/pnpm/dist/pnpm.cjs:182979:7"
+    }
+  }
+}
