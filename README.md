@@ -18,7 +18,7 @@ Removed sections:
 
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/skamansam/webfont-importer/main/screenshot.png" alt="screenshot" width="200" height="auto" />
+  <img src="https://raw.githubusercontent.com/skamansam/webfont-importer/sveltekit/screenshot.png" alt="screenshot" width="200" height="auto" />
   <h1>WebFont Importer</h1>
   
   <p>
