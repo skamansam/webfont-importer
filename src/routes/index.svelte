@@ -1,62 +1,66 @@
 <script lang="ts">
-	import type { Font, FontVariant } from './WebFontImporterTypes';
+	import type { Font, FontVariant, WebfontImporterSource } from './WebFontImporterTypes';
 	import WebFontImporter from '../lib/WebFontImporter.svelte';
 	let fontFamily = 'Playball';
 	let fontVariant:FontVariant = '400';
 	let fontItalics = false;
   let showStyled = true;
-  let fontSource = 'bunny';
+  let fontSource:WebfontImporterSource = 'bunny';
 </script>
 
 <svelte:head>
 	<WebFontImporter source={fontSource} fonts="{[{family: fontFamily, variants:[{variant: fontVariant, italics: fontItalics}]}]}"/>
 </svelte:head>
 
-<h2 class="ml-3 font-bold">Options:</h2>
-<div class="border p-3 shadow-lg mb-3">
-  <div class="w-100 mt-2 mb-2">
-    <label for="fontSource" class="font-bold w-1/3 inline-block">Source: </label>
-    <select id="fontSource" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontSource}">
-      <option value="bunny">Bunny</option>
-      <option value="google">Google</option>
-    </select>
+<details class="ml-3">
+  <summary class="ml-3 font-bold">Options</summary>
+  <div class="border p-3 shadow-lg mb-3">
+    <div class="w-100 mt-2 mb-2">
+      <label for="fontSource" class="font-bold w-1/3 inline-block">Source: </label>
+      <select id="fontSource" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontSource}">
+        <option value="bunny">Bunny</option>
+        <option value="google">Google</option>
+      </select>
+    </div>
+    <div class="w-100">
+      <label for="fontFamily" class="font-bold w-1/3 inline-block">Font Family: </label>
+      <input id="fontFamily" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontFamily}"/>
+    </div>
+    <div class="w-100 mt-2 mb-2">
+      <label for="fontVariant" class="font-bold w-1/3 inline-block">Variant: </label>
+      <input id="fontVariant" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontVariant}"/>
+    </div>
+    <div class="w-100">
+      <input id="fontItalics" type="checkbox" class="inset border-2" bind:checked="{fontItalics}"/>
+      <label for="fontItalics" class="font-bold">Italics</label>
+    </div>
   </div>
-  <div class="w-100">
-    <label for="fontFamily" class="font-bold w-1/3 inline-block">Font Family: </label>
-    <input id="fontFamily" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontFamily}"/>
-  </div>
-  <div class="w-100 mt-2 mb-2">
-    <label for="fontVariant" class="font-bold w-1/3 inline-block">Variant: </label>
-    <input id="fontVariant" type="text" class="inset border-2 w-3/5 inline-block" bind:value="{fontVariant}"/>
-  </div>
-  <div class="w-100">
-    <input id="fontItalics" type="checkbox" class="inset border-2" bind:checked="{fontItalics}"/>
-    <label for="fontItalics" class="font-bold">Italics</label>
-  </div>
-</div>
+</details>
 
-<h2 class="ml-3 font-bold">Code:</h2>
-<div class="border shadow-lg mb-3">
-  <pre><code>
-    &lt;WebFontImporter
-      source="{fontSource}" 
-      fonts="{'{'}
-      [
-        {'{'}
-          family: "{fontFamily}", 
-          variants: [
-            {'{'}
-              variant: "{fontVariant}", 
-              italics: {fontItalics}
-            {'}'}
-          ]
-        {'}'}
-      ]
-    {'}'}"/&gt;
-  </code></pre>
-</div>
+<details class="ml-3">
+  <summary class="ml-3 font-bold">Code</summary>
+  <div class="border shadow-lg mb-3">
+    <pre><code>
+      &lt;WebFontImporter
+        source="{fontSource}" 
+        fonts="{'{'}
+        [
+          {'{'}
+            family: "{fontFamily}", 
+            variants: [
+              {'{'}
+                variant: "{fontVariant}", 
+                italics: {fontItalics}
+              {'}'}
+            ]
+          {'}'}
+        ]
+      {'}'}"/&gt;
+    </code></pre>
+  </div>
+</details>
 
-<h2 class="ml-3 font-bold">    
+<h2 class="mt-3 font-bold">    
   <input id="showStyled" type="checkbox" class="inset border-2" bind:checked="{showStyled}"/>
   <label for="showStyled" class="font-bold">Styled Text:</label>
 </h2>
