@@ -18,7 +18,7 @@ Removed sections:
 
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/skamansam/webfont-importer/sveltekit/screenshot.png" alt="screenshot" width="200" height="auto" />
+  <!-- <img src="https://raw.githubusercontent.com/skamansam/webfont-importer/sveltekit/screenshot.png" alt="screenshot" width="200" height="auto" /> -->
   <h1>WebFont Importer</h1>
   
   <p>
@@ -85,9 +85,9 @@ Removed sections:
 <!-- About the Project -->
 ## :star2: About the Project
 
-<!-- <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
-</div> -->
+<div align="center"> 
+  <img src="https://raw.githubusercontent.com/skamansam/webfont-importer/sveltekit/screenshot.png" alt="screenshot" />
+</div>
 
 
 <!-- TechStack -->
