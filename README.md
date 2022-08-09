@@ -120,27 +120,37 @@ Removed sections:
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
-<!-- Prerequisites -->
+<!-- Prerequisites
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
+This project uses `pnpm` as package manager
 
 ```bash
- npm install --global yarn
+ npm install --global pnpm
 ```
+ -->
 
 <!-- Installation -->
 ### :gear: Installation
 
-Install my-project with npm
+Install webfont-importer with pnpm
 
 ```bash
-  yarn install my-project
-  cd my-project
+  pnpm add webfont-importer
+```
+Install webfont-importer with npm
+
+```bash
+  npm install webfont-importer
+```
+Install webfont-importer with yarn
+
+```bash
+  pnpm add webfont-importer
 ```
 
 
-<!-- Run Locally -->
+<!-- Run Locally 
 ### :running: Run Locally
 
 Clone the project
@@ -166,27 +176,55 @@ Start the server
 ```bash
   yarn start
 ```
-
+-->
 
 <!-- Usage -->
 ## :eyes: Usage
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+Webfont-importer is designed to be super easy to use and a convenient method to switch from google fonts to the more GDPR-friendly bunny fonts.
 
+It is recommended to use this in the `svelte:head` special element. This library has types, so feel free to use those if you wish.
+
+> NOTE: There is no validation on the fonts yet, neither typescript nor runtime. I may add that in the future depending on how many users there are.
 
 ```javascript
-import Component from 'my-project'
+<script lang="ts">
+  import type { Font, WebfontImporterSource } from 'webfont-importer';
+  import WebfontImporter from 'webfont-importer';
 
-function App() {
-  return <Component />
-}
+  let fontSource: WebfontImporterSource = 'bunny';
+
+  let fonts: Font[] = [
+    {
+      family: 'Roboto'
+    },
+    {
+      family: 'Playball',
+      variants:[{
+        variant: '400', 
+      },
+      {
+        variant: '400',
+        italics: true 
+      }]
+    }
+  ];
+</script>
+
+<svelte:head>
+	<WebfontImporter source={fontSource} fonts/>
+</svelte:head>
+
+<p>Rest of component goes here.</p>
 ```
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+* [X] Add working version for use in [sveltemeacoffee](https://github.com/skamansam/sveltemeacoffee)
+* [ ] Add typescript validation for fonts.
+* [ ] Add runtime validation for fonts. (maybe print errors/warnings to console)
+
 
 <!-- Contributing -->
 ## :wave: Contributing
@@ -210,13 +248,13 @@ Please read the [Code of Conduct](https://github.com/skamansam/webfont-importer/
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the MIT License. See LICENSE.txt for more information.
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Samuel C Tyler - [@skamansam](https://twitter.com/skamansam) - skamansam@gmail.com
 
 Project Link: [https://github.com/skamansam/webfont-importer](https://github.com/skamansam/webfont-importer)
 

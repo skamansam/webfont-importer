@@ -12,7 +12,7 @@ const config = {
     // customElement: true
   },
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
 	}
 };
 
