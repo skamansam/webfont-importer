@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Font, FontVariant, WebfontImporterSource } from './WebFontImporterTypes';
+	import type { Font, FontVariant, WebfontImporterSource } from './types';
   // https://fonts.bunny.net/css?family=amiri:400|goldman:400
   // <link rel="preconnect" href="https://fonts.googleapis.com">
   // <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
