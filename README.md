@@ -236,7 +236,7 @@ It is recommended to use this in the `svelte:head` special element. This library
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started.
+See `CONTRIBUTING.md` for ways to get started.
 
 
 <!-- Code of Conduct -->
