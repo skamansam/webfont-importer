@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,7 +12,14 @@ const config = {
     // customElement: true
   },
 	kit: {
-		adapter: adapter(),
+    paths: {
+      base: process.env.NODE_ENV === "production" ? "/webfont-importer" : "",
+    },
+		adapter: adapter({
+      pages: 'build', 
+      assets: 'build',
+      fallback: 'index.html',
+    }),
 	}
 };
 
